@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using System;
+using BepInEx;
 using HarmonyLib;
 
 namespace Chipabu
@@ -24,6 +25,15 @@ namespace Chipabu
 
         static void Postfix(TranslateMgr __instance) {
             banWordsRef(__instance) = new string[0];
+        }
+    }
+
+    [HarmonyPatch(typeof(CompositeWnd))]
+    [HarmonyPatch("Get_value_sign")]
+    class FixSignsPatch {
+        static void Postfix(ref int value, ref string __result) {
+            string prefix = value > 0 ? "+" : "";
+            __result = prefix + value.ToString() + " ";
         }
     }
 }
