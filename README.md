@@ -1,6 +1,6 @@
 # Chipabu
 
-Chipabu is a mod for Chinese Parents that does some things.
+Chipabu is a mod for Chinese Parents (v2.0.0.4) that does some things.
 
 Made for whatever my girlfriend needs, I don't play the game 😝
 
